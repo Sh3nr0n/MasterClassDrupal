@@ -187,4 +187,6 @@ https://www.drupal.org/project/project_module
         
 **On peut à présent se connecter au site Drupal au prix de lourds efforts de configuration : Happy hacking!**
 
+ - Aller dans le menu Configuration > Performance (rubrique Développement) et décocher "Agréger les fichiers CSS" et "Agréger les fichiers JavaScript" pour rétablir un affichage correct. N'oubliez pas de vider le cache avec drush *cache-clear drush* ou *drush cr*
+
 
