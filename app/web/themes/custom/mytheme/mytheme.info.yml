@@ -1,0 +1,14 @@
+name: mytheme
+type: theme
+description: ajouter ici une description si vous le mettez à dispo de la communauté
+core: 8.x 
+screenshot: ""
+
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+
+librairies:
+  - mytheme/global
+

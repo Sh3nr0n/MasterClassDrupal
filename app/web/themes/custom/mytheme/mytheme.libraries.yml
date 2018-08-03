@@ -1,0 +1,10 @@
+global:
+  version: VERSION
+  css: 
+    base: 
+      dist/bulma/bulma.min.css: {}
+      dist/swiper/css/swiper.min.css: {}
+      dist/css/global.css: {}
+  js:
+    dist/swiper/js/swiper.min.js: {}
+    dist/js/app.js: {}
