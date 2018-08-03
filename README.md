@@ -15,7 +15,7 @@ https://www.drupal.org/project/project_module
  - Dans Web/themes : créer un dossier /custom qui va recevoir les templates personnalisés et un dossier /contrib qui va recevoir les templates de la communauté drupal
  - Coller le dossier /template dedans
  - Déplacer le dossier dist dans le dossier parent
- - Créer un dossier /templates dans le dossier template dans lequel il faut créer les fichiers twig suivants
+ - Créer un dossier /templates dans le dossier /template (sans "s") dans lequel il faut créer les fichiers twig suivants
 
 
        /mytheme  |
@@ -50,11 +50,11 @@ https://www.drupal.org/project/project_module
        version: VERSION de l'app
        css:
          base:
-           dist/bulma/bulma.min.css: {} //chemin vers le      css du template et des librairies utilisées
+           dist/bulma/bulma.min.css: {} => chemin vers le      css du template et des librairies utilisées
            dist/swiper/css/swiper.min.css: {}
            dist/css/global.css: {}
        js:
-         dist/swiper/js/swiper.min.js: {} // chemin vers      les fichiers js utilisés
+         dist/swiper/js/swiper.min.js: {} => chemin vers      les fichiers js utilisés
          dist/js/app.js: {}
 
  - Fichier info.yml
@@ -67,7 +67,7 @@ https://www.drupal.org/project/project_module
        type: theme => le type de theme
        description: ajouter ici une description si vous    le mettez à dispo de la communauté
        core: 8.x => La versiuon principale de Drupal    utilisée
-       screenshot: ""=> Possibilité d'ajouter une image
+       screenshot: "" => Possibilité d'ajouter une image
    
        regions: => Les différentes sections de nos pages
          header: Header
@@ -113,20 +113,19 @@ https://www.drupal.org/project/project_module
            {{ page.footer }}
        </footer>
 
- - Créer une base de données vide (avec postgreSQL)
+ - Créer une base de données vide (avec postgreSQL par exemple)
 
  - Se placer dans le dossier web et entrer la commande suivante
 
         php -S localhost:8000
 
- - Aller dans le navigateur etentrer l'adresse suivante:
+ - Aller dans le navigateur et entrer l'adresse suivante:
 
         localhost:8000/core/install.php
  - Choisir un langage et cliquer sur "Save and continue"
  - Profil Standard
- - Pour l'hôte entrer 127.0.0.1 (localhost peut entraîner un bug) + entrer les infos de connexion à la base
- - L'installation automatique de drupal se lance
- - Renseigner les informations requises
+ - Pour l'hôte entrer 127.0.0.1 (localhost peut entraîner un bug) + entrer les infos de connexion à la base de données
+ - L'installation automatique de drupal se lance : renseigner les informations requises
 
  - Plugins recommandé pour vider le cache Drupal: drush
  - Se placer dans le dossier du projet
@@ -140,14 +139,14 @@ https://www.drupal.org/project/project_module
  - Récupérer le repo github de drush
 
        wget https://github.com/drush-ops/drush/releases/download/8.1.16/drush.phar
- - Attribuer les droits d'executer des commandes à drush?
+ - Attribuer les droits d'executer des commandes à drush (à confirmer)
 
        chmod +x drush.phar
- - Déplacer drush dans le dossier bin
+ - Déplacer drush dans le dossier bin de votre machine
 
        sudo mv drush.phar /usr/local/bin/drush
 
- - Installer les modules(= extensions) admin tool, paragraph et devel, (à tester "chaos tool suite")
+ - Installer les modules (= extensions) admin tool, paragraph et devel, (à tester : "chaos tool suite")
 
        composer require drupal/paragraphs
        composer require drupal/devel
@@ -171,7 +170,7 @@ https://www.drupal.org/project/project_module
   
 
  -  Aller dans le menu structure > type de contenu > Ajouter un type de contenu
- -  Entrer le nom et aller décocher toutes les cases dans "Options de publicaion", "Paramètre d'affichage" et , Paramètre du menu" puis enregistrer les modifications
+ -  Entrer le nom et aller décocher toutes les cases dans "Options de publication", "Paramètre d'affichage" et , Paramètre du menu" puis enregistrer les modifications
  - Déplacer le dossier du projet (/app) dans le var/www/html de la machine
  - Dans le navigateur, se rendre à l'adresse du projet: (ex : http://localhost/drupal/app/web/) et cliquer sur **se connecter**
  - Se rendre dans :
