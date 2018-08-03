@@ -3,7 +3,7 @@
  - Prérequis : avoir une version de composer supérieure à 1.0 et CURL doit être activé dans le fichier "php.ini"
  - Se placer dans le répertoire ou créer le projet 'my_site_name_dir'
  
-**composer create-project drupal-composer/drupal-project:8.x-dev my_site_name_dir** 
+       composer create-project drupal-composer/drupal-project:8.x-dev my_site_name_dir
 
  - Rechercher des modules
 https://www.drupal.org/project/project_module
@@ -117,10 +117,11 @@ https://www.drupal.org/project/project_module
 
  - Se placer dans le dossier web et entrer la commande suivante
 
-**php -S localhost:8000**
+        php -S localhost:8000
+
  - Aller dans le navigateur etentrer l'adresse suivante:
 
-**localhost:8000/core/install.php**
+        localhost:8000/core/install.php
  - Choisir un langage et cliquer sur "Save and continue"
  - Profil Standard
  - Pour l'hôte entrer 127.0.0.1 (localhost peut entraîner un bug) + entrer les infos de connexion à la base
@@ -130,30 +131,30 @@ https://www.drupal.org/project/project_module
  - Plugins recommandé pour vider le cache Drupal: drush
  - Se placer dans le dossier du projet
 
-**composer require drush/drush**
+       composer require drush/drush
 
  - Autres commandes pour installer des extensions en global (exemple ici avec drush)
  - Faire un cd pour retourner dans le home
 
-**composer  global require drush/drush:8**
+       composer  global require drush/drush:8
  - Récupérer le repo github de drush
 
-**wget https://github.com/drush-ops/drush/releases/download/8.1.16/drush.phar**
+       wget https://github.com/drush-ops/drush/releases/download/8.1.16/drush.phar
  - Attribuer les droits d'executer des commandes à drush?
 
-**chmod +x drush.phar**
+       chmod +x drush.phar
  - Déplacer drush dans le dossier bin
 
-**sudo mv drush.phar /usr/local/bin/drush**
+       sudo mv drush.phar /usr/local/bin/drush
 
  - Installer les modules(= extensions) admin tool, paragraph et devel, (à tester "chaos tool suite")
 
-     - **composer require drupal/paragraphs**
-     - **composer require drupal/devel**
-     - **composer require drupal/admin_toolbar**
-     - **composer require drupal/entity_reference_revisions**
+       composer require drupal/paragraphs
+       composer require drupal/devel
+       composer require drupal/admin_toolbar
+       composer require drupal/entity_reference_revisions
 
- - Se rendre dans le localhost:
+ - Se rendre dans l'interface admin en localhost:
  http://localhost:8000/admin/modules
  - Aller dans COEUR et cocher les cases pour le modules à activer:
  
@@ -164,13 +165,26 @@ https://www.drupal.org/project/project_module
 
  - Cliquer sur "Installer"
 
- -  Commande pour lancer un "rebuild cache"
+ -  Commande pour lancer un "rebuild cache" si **drush cr** *ne fonctionne pas*
 
-**drush cache-clear drush** (**drush cr** *ne fonctionne pas*)
+        drush cache-clear drush
+  
 
  -  Aller dans le menu structure > type de contenu > Ajouter un type de contenu
  -  Entrer le nom et aller décocher toutes les cases dans "Options de publicaion", "Paramètre d'affichage" et , Paramètre du menu" puis enregistrer les modifications
  - Déplacer le dossier du projet (/app) dans le var/www/html de la machine
- - Dans le navigateur, se rendre à l'adresse : http://localhost/drupal/app/web/ et cliquer sur **se connecter**
+ - Dans le navigateur, se rendre à l'adresse du projet: (ex : http://localhost/drupal/app/web/) et cliquer sur **se connecter**
+ - Se rendre dans :
+        
+       /etc/apache2/site-enabled/000-default.conf
+
+ - Remplacer le contenu du fichier par celui présent à la racine de ce dépot dans la même arborescence
+
+ - Entrer la commande suivante pour activer la réécriture des URL par PHP
+
+        sudo a2enmod rewrite
+        sudo service apache2 restart
+        
+**On peut à présent se connecter au site Drupal au prix de lourds efforts de configuration : Happy hacking!**
 
 
