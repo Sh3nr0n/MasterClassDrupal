@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+
+
+.is-fullarea {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.bande{
+    background: rgba(00, 00, 00, 0.5);
+    color: white;
+}
+
+.is-fullheightme {
+    height: 100%;
+    max-height: 100%;
+}
+
+.is-fullwidth {
+    width: 100%;
+    max-width: 100%;
+}
+
+.flex-fullcnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+
+.is-sticky {
+    position: sticky !important;
+    top: -1px !important;
+    z-index: 30;
+    height:4em;
+}
+
+.slide-img {
+    background-position: center;
+    background-size: cover;
+    background-color: #555;
+    filter: grayscale(50%);
+}
+
+.pdg-img{
+    padding-top:34%;
+    padding-bottom: 5%;
+}
+
+.paddingText{
+padding:20%;
+}
+
+.is-circle{
+    border-radius:50%;
+}
+.pdg-section{
+    padding:4%;
+}
