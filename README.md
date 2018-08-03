@@ -116,8 +116,10 @@ https://www.drupal.org/project/project_module
  - Créer une base de données vide (avec postgreSQL)
 
  - Se placer dans le dossier web et entrer la commande suivante
+
 **php -S localhost:8000**
  - Aller dans le navigateur etentrer l'adresse suivante:
+
 **localhost:8000/core/install.php**
  - Choisir un langage et cliquer sur "Save and continue"
  - Profil Standard
@@ -127,16 +129,21 @@ https://www.drupal.org/project/project_module
 
  - Plugins recommandé pour vider le cache Drupal: drush
  - Se placer dans le dossier du projet
+
 **composer require drush/drush**
 
  - Autres commandes pour installer des extensions en global (exemple ici avec drush)
  - Faire un cd pour retourner dans le home
+
 **composer  global require drush/drush:8**
  - Récupérer le repo github de drush
+
 **wget https://github.com/drush-ops/drush/releases/download/8.1.16/drush.phar**
  - Attribuer les droits d'executer des commandes à drush?
+
 **chmod +x drush.phar**
  - Déplacer drush dans le dossier bin
+
 **sudo mv drush.phar /usr/local/bin/drush**
 
  - Installer les modules(= extensions) admin tool, paragraph et devel, (à tester "chaos tool suite")
@@ -158,10 +165,12 @@ https://www.drupal.org/project/project_module
  - Cliquer sur "Installer"
 
  -  Commande pour lancer un "rebuild cache"
+
 **drush cache-clear drush** (**drush cr** *ne fonctionne pas*)
 
  -  Aller dans le menu structure > type de contenu > Ajouter un type de contenu
  -  Entrer le nom et aller décocher toutes les cases dans "Options de publicaion", "Paramètre d'affichage" et , Paramètre du menu" puis enregistrer les modifications
  - Déplacer le dossier du projet (/app) dans le var/www/html de la machine
+ - Dans le navigateur, se rendre à l'adresse : http://localhost/drupal/app/web/ et cliquer sur **se connecter**
 
 
